@@ -1,0 +1,302 @@
+<!-- Home Page for vitae-page -->
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#0B1320; line-height:1.6;">
+  <!-- Header (100px, no action buttons) -->
+  <header class="topbar" style="height:100px; background:linear-gradient(90deg,#0A2540,#071a2e); color:#f8fafc; padding:0 16px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20;">
+    <div style="display:flex; align-items:center; gap:24px; min-width:0;">
+      <span class="brand" style="font-weight:800; letter-spacing:0.6px; font-size:20px; white-space:nowrap; font-family:'Segoe UI',Roboto,Helvetica,Arial;">VITAE PAGE</span>
+      <nav class="nav" style="display:flex; gap:16px; align-items:center; white-space:nowrap;">
+        <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" class="nav-link">Features</a>
+        <a href="#howItWorks" (click)="$event.preventDefault(); scrollTo('howItWorks')" class="nav-link">How It Works</a>
+        <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" class="nav-link">Plans</a>
+        <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" class="nav-link">Testimonials</a>
+        <a href="#faq" (click)="$event.preventDefault(); scrollTo('faq')" class="nav-link">FAQ</a>
+      </nav>
+    </div>
+    <!-- Mobile menu toggle (label + checkbox; no buttons in header) -->
+    <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-label="Toggle navigation" />
+    <label for="nav-toggle" class="burger" aria-label="Open menu" style="display:none; align-items:center; cursor:pointer; gap:6px;">
+      <mat-icon class="icon-menu" style="font-size:28px; height:28px; width:28px;">menu</mat-icon>
+      <mat-icon class="icon-close" style="font-size:28px; height:28px; width:28px;">close</mat-icon>
+    </label>
+  </header>
+  <!-- Mobile menu card -->
+  <div class="mobile-menu" style="display:none; position:sticky; top:100px; z-index:19; background:#ffffff; border-bottom:1px solid #e2e8f0; box-shadow:0 8px 24px rgba(2,6,23,0.08);">
+    <div style="padding:12px 16px; display:flex; flex-direction:column; gap:8px;">
+      <a href="#features" (click)="$event.preventDefault(); scrollTo('features'); closeMobileMenu()" class="mobile-link">Features</a>
+      <a href="#howItWorks" (click)="$event.preventDefault(); scrollTo('howItWorks'); closeMobileMenu()" class="mobile-link">How It Works</a>
+      <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans'); closeMobileMenu()" class="mobile-link">Plans</a>
+      <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials'); closeMobileMenu()" class="mobile-link">Testimonials</a>
+      <a href="#faq" (click)="$event.preventDefault(); scrollTo('faq'); closeMobileMenu()" class="mobile-link">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#f1f5f9,#ffffff); padding:56px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08);">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 520px; min-width:280px;">
+          <h1 style="margin:0 0 12px 0; font-size:40px; line-height:1.2; color:#0B1320;">Turn your resume into a beautiful website in minutes</h1>
+          <p style="margin:0 0 16px 0; font-size:16px; color:#334155;">VitaePage showcases your experience, education, skills, and projects—fast, responsive, and recruiter-friendly.</p>
+          <ul style="margin:0 0 24px 18px; color:#475569;">
+            <li>Import from LinkedIn or upload your PDF</li>
+            <li>Pick a clean template optimized for quick scanning</li>
+            <li>Publish to your own domain with SEO built in</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button mat-raised-button color="primary" style="background:#0A2540; color:#f8fafc; padding:0 20px; height:44px; border-radius:8px; font-weight:600;">Create your site free</button>
+            <button mat-stroked-button style="height:44px; border-radius:8px; border-color:#cbd5e1; color:#0B1320;">View live demo</button>
+          </div>
+          <p style="margin:12px 0 0 0; font-size:12px; color:#64748b;">No credit card required. Export to PDF anytime.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">Core Features</h2>
+      <p style="margin:0 0 24px 0; color:#475569;">Set up in minutes, publish with confidence, and keep control.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <mat-icon color="primary">cloud_download</mat-icon>
+            <mat-card-title style="font-size:18px; color:#0B1320;">1‑Click Import</mat-card-title>
+          </div>
+          <mat-card-content style="color:#334155;">Pull experience, education, skills, and links from LinkedIn or a PDF; auto-structured into clean sections.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <mat-icon color="primary">timeline</mat-icon>
+            <mat-card-title style="font-size:18px; color:#0B1320;">Impact Timeline</mat-card-title>
+          </div>
+          <mat-card-content style="color:#334155;">Show roles with dates, responsibilities, metrics, and tech stack in a scannable timeline.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <mat-icon color="primary">school</mat-icon>
+            <mat-card-title style="font-size:18px; color:#0B1320;">Education & Certifications</mat-card-title>
+          </div>
+          <mat-card-content style="color:#334155;">Highlight degrees, coursework, GPA (optional), and industry certifications with verifiable badges.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <mat-icon color="primary">picture_as_pdf</mat-icon>
+            <mat-card-title style="font-size:18px; color:#0B1320;">PDF & ATS Exports</mat-card-title>
+          </div>
+          <mat-card-content style="color:#334155;">Generate a pixel-perfect PDF and an ATS-friendly version so your content passes automated screenings.</mat-card-content>
+        </mat-card>
+      </div>
+      <p style="margin:18px 0 0 0; color:#64748b; font-size:12px;">Under the hood: schema.org Resume markup, responsive layouts, and privacy-friendly analytics.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">About VitaePage</h2>
+      <mat-card style="border:1px solid #e2e8f0; border-radius:12px; padding:20px; background:#ffffff;">
+        <p style="margin:0 0 12px 0; color:#334155;">VitaePage replaces static resumes with a personal career site that looks great on any device and makes your achievements easy to scan. It's built for people who want a professional presence without learning web design.</p>
+        <ul style="margin:0; padding-left:18px; color:#334155;">
+          <li>Built for students, engineers, designers, marketers, and freelancers</li>
+          <li>Privacy-first: keep drafts private, share securely, or go public</li>
+          <li>Performance-focused: fast load times and accessible defaults</li>
+        </ul>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="howItWorks" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">How It Works</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">1. Import</div>
+          <div style="color:#334155;">Connect LinkedIn or upload your PDF. We parse roles, education, skills, and links into structured sections.</div>
+        </mat-card>
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">2. Choose a template</div>
+          <div style="color:#334155;">Pick a clean, recruiter-friendly layout with adjustable colors and section order.</div>
+        </mat-card>
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">3. Refine</div>
+          <div style="color:#334155;">Add metrics, featured projects, certifications, and custom sections like Awards or Volunteering.</div>
+        </mat-card>
+        <mat-card style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">4. Publish</div>
+          <div style="color:#334155;">Go live at a vitae.page link or your custom domain. Enable analytics and SEO in one click.</div>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#0A2540; color:#f8fafc; height:44px; border-radius:8px;">Start free</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why VitaePage -->
+  <section id="why" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">Why VitaePage</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">Built for quick scans</div>
+          <div style="color:#334155;">Hiring managers skim in seconds. Our layouts surface impact, role, and results immediately.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">Discoverable by search</div>
+          <div style="color:#334155;">Structured data helps your site rank for your name and skills, increasing profile views.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">Own your narrative</div>
+          <div style="color:#334155;">Go beyond a static PDF with projects, links, and media that show how you work.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <div style="font-weight:600; color:#0B1320; margin-bottom:6px;">Portable and future-proof</div>
+          <div style="color:#334155;">Export anytime to PDF or ATS; keep your content independent of any job board.</div>
+        </mat-card>
+      </div>
+      <p style="margin:18px 0 0 0; color:#64748b; font-size:12px;">Median first publish time: 12 minutes from sign-up to live site (based on recent cohort).</p>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">Plans</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title style="font-size:18px; color:#0B1320;">Starter</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:20px; color:#0B1320;">$0 forever</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#334155;">
+            <li>Public profile at yourname.vitae.page</li>
+            <li>1 template and basic customization</li>
+            <li>PDF and ATS exports</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#0B1320; height:42px;">Start free</button>
+        </mat-card>
+
+        <mat-card style="flex:1 1 300px; min-width:280px; border:2px solid #0A2540; border-radius:16px; padding:22px; background:#0A2540; color:#f8fafc; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <mat-card-title style="font-size:18px; color:#f8fafc;">Pro</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:20px; color:#f8fafc;">$8/month billed annually</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#e2e8f0;">
+            <li>Custom domain + HTTPS</li>
+            <li>Unlimited projects and custom sections</li>
+            <li>Privacy controls + basic analytics</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%; height:44px; background:#2EC4B6; color:#0B1320; font-weight:700;">Upgrade to Pro</button>
+        </mat-card>
+
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title style="font-size:18px; color:#0B1320;">Career</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:20px; color:#0B1320;">$25/month</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#334155;">
+            <li>Multiple resumes/sites (job-specific)</li>
+            <li>Advanced analytics + UTM tracking</li>
+            <li>Priority support and onboarding</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#0B1320; height:42px;">Talk to us</button>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">What users say</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 4px 0; color:#0B1320; font-weight:600;">Maya Chen</p>
+          <p style="margin:0 0 6px 0; color:#64748b;">Product Designer, LoopLabs</p>
+          <p style="margin:0; color:#334155;">“I shipped a portfolio-quality resume site in one evening and booked three interviews the same week.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 4px 0; color:#0B1320; font-weight:600;">Andre Patel</p>
+          <p style="margin:0 0 6px 0; color:#64748b;">Software Engineer, North Peak</p>
+          <p style="margin:0; color:#334155;">“The LinkedIn import saved hours. Recruiters loved the impact timeline and quick PDF export.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 4px 0; color:#0B1320; font-weight:600;">Sofia Ramirez</p>
+          <p style="margin:0 0 6px 0; color:#64748b;">University Career Coach, CityU</p>
+          <p style="margin:0; color:#334155;">“My students go from blank page to a polished site in 15 minutes—no code, no headaches.”</p>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">Frequently Asked Questions</h2>
+      <mat-accordion multi style="background:#fff;">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div style="font-weight:600; color:#0B1320;">Will this replace my PDF resume?</div>
+          </mat-expansion-panel-header>
+          <p style="color:#334155; margin:0;">Yes. You can host a live site and download a matching PDF and ATS-friendly version anytime.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div style="font-weight:600; color:#0B1320;">Do I need to know how to code?</div>
+          </mat-expansion-panel-header>
+          <p style="color:#334155; margin:0;">No. Everything is guided. Pick a template, reorder sections, and publish in clicks.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div style="font-weight:600; color:#0B1320;">Can I use my own domain?</div>
+          </mat-expansion-panel-header>
+          <p style="color:#334155; margin:0;">Yes. Pro and Career include custom domains with automatic SSL.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div style="font-weight:600; color:#0B1320;">Is my data private?</div>
+          </mat-expansion-panel-header>
+          <p style="color:#334155; margin:0;">You control visibility by page: private draft, password-protected, or public. Export or delete data anytime.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#0B1320;">Contact</h2>
+      <mat-card style="border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff; max-width:680px;">
+        <p style="margin:0 0 8px 0; color:#334155;">Questions about building your resume site? We reply within one business day.</p>
+        <a href="mailto:support&#64;vitaepage.app" style="text-decoration:none; color:#0A2540; font-weight:600;">Email us at support&#64;vitaepage.app</a>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0A2540; color:#e2e8f0;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:220px;">
+        <div style="font-weight:800; margin-bottom:6px; letter-spacing:0.6px;">VITAE PAGE</div>
+        <div style="font-size:13px; color:#b6c2d1;">VitaePage helps you present your experience and education as a fast, accessible, and recruiter-friendly website. Own your narrative and share it with confidence.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:600; margin-bottom:8px; color:#f1f5f9;">Product</div>
+          <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Features</a>
+          <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Pricing/Plans</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1;">Docs</a>
+        </div>
+        <div>
+          <div style="font-weight:600; margin-bottom:8px; color:#f1f5f9;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">About</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Careers</a>
+          <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact')" style="display:block; text-decoration:none; color:#cbd5e1;">Contact</a>
+        </div>
+        <div>
+          <div style="font-weight:600; margin-bottom:8px; color:#f1f5f9;">Legal</div>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Privacy</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1;">Terms</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#14324d;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#b6c2d1;">© 2025 vitae-page. All rights reserved.</div>
+  </footer>
+</div>
