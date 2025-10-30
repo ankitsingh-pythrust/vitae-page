@@ -1,0 +1,22 @@
+/* Header navigation */
+.nav a.nav-link{color:#e2e8f0;text-decoration:none;font-weight:500;opacity:.92}
+.nav a.nav-link:hover{opacity:1}
+.brand{white-space:nowrap}
+/* Mobile burger visibility */
+@media (max-width: 860px){
+  .nav{display:none}
+  .burger{display:flex}
+}
+/* Mobile menu toggle behavior */
+#nav-toggle{display:none}
+#nav-toggle + label .icon-close{display:none}
+#nav-toggle:checked + label .icon-menu{display:none}
+#nav-toggle:checked + label .icon-close{display:inline-flex}
+/* Mobile menu display controlled by checkbox (placed immediately after header) */
+.topbar + .mobile-menu{display:none}
+#nav-toggle:checked ~ .mobile-menu{display:block}
+.mobile-link{padding:10px 8px; border-radius:8px; color:#0B1320; text-decoration:none}
+.mobile-link:hover{background:#f1f5f9}
+/* Feature card hover effects */
+.feature-card{transition:transform 160ms ease, box-shadow 160ms ease; will-change:transform}
+.feature-card:hover,.feature-card:focus-within{transform:translateY(-2px) scale(1.01); box-shadow:0 10px 26px rgba(2,6,23,.16); outline:none}
